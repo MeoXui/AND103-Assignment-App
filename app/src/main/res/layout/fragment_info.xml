@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.Info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center|top">
+
+        <ImageView
+            android:id="@+id/img_avt"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/ic_person_24x24_rgb888" />
+
+        <TextView
+            android:id="@+id/tv_un"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="Tên người dùng"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:gravity="center"
+            android:text="abc@gmail.com"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:id="@+id/tv_edit_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            android:gravity="center"
+            android:text="Thông tin cá nhân"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            android:gravity="center"
+            android:text="Lịch sửa mua bán"
+            android:textSize="24sp"/>
+
+        <Button
+            android:id="@+id/btn_out"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Đăng xuất"
+            android:textSize="18sp"
+            android:backgroundTint="#f00"/>
+    </LinearLayout>
+</FrameLayout>
