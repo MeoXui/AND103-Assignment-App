@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import fpoly.huynkph38086.app.fragments.Cart;
 import fpoly.huynkph38086.app.fragments.ListFrag;
 import fpoly.huynkph38086.app.fragments.Home;
 import fpoly.huynkph38086.app.fragments.Info;
@@ -48,7 +49,7 @@ public class Main extends AppCompatActivity {
                 frag = new Home();
 
             else if (item.getItemId() == R.id.nav_Cart)
-                frag = new ListFrag();
+                frag = new Cart();
 
             else if (item.getItemId() == R.id.nav_Info)
                 frag = new Info();

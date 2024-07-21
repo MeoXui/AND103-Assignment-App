@@ -29,7 +29,10 @@ public class Home extends ListFrag {
         // Inflate the layout for this fragment
         View view = super.onCreateView(inflater, container, savedInstanceState);
 
+        btnPay.setVisibility(View.GONE);
+
         list = new ArrayList<>();
+        list.add(new Product("_id", "Sản phẩm mẫu", 200, 1, "", ""));
 
         refresh();
 
@@ -40,6 +43,9 @@ public class Home extends ListFrag {
 
     void refresh() {
         request.api.getCars().enqueue(callback);
+        adapter = new HomeAdapter(getActivity(), list);
+        lv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     Callback<Response<ArrayList<Product>>> callback = new Callback<Response<ArrayList<Product>>>() {
@@ -48,11 +54,8 @@ public class Home extends ListFrag {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 if (response.body().status == 200) {
-                    list = response.body().data;
-                    Toast.makeText(getActivity(), "List: " + response.body().data.size(), Toast.LENGTH_SHORT).show();
-                    adapter = new HomeAdapter(getActivity(), list);
-                    lv.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
+                    list.clear();
+                    list.addAll(response.body().data);
                 }
             }
         }
