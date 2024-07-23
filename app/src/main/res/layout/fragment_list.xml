@@ -22,13 +22,16 @@
                 android:id="@+id/ed_search"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="4dp"
-                android:imeOptions="actionSearch"
-                android:padding="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_corner"
                 android:hint="Tìm kiếm..."
-                android:textSize="18sp"
-                android:background="@drawable/border_corner"/>
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="48dp"
@@ -44,6 +47,15 @@
                 android:background="@drawable/bg_btn_gray"
                 android:src="@drawable/ic_refresh_48x48_rgbfff" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tiêu đề"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center" />
 
         <ListView
             android:id="@+id/lv"

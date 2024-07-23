@@ -16,13 +16,13 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import fpoly.huynkph38086.app.R;
-import fpoly.huynkph38086.app.models.Product;
+import fpoly.huynkph38086.app.models.Fruit;
 
-public class HomeAdapter extends ArrayAdapter<Product> {
+public class HomeAdapter extends ArrayAdapter<Fruit> {
     Context mContext;
     int itemLayout;
 
-    public HomeAdapter(@NonNull Context context, @NonNull List<Product> list) {
+    public HomeAdapter(@NonNull Context context, @NonNull List<Fruit> list) {
         super(context, R.layout.item_fruit, list);
         mContext = context;
         itemLayout = R.layout.item_fruit;
@@ -40,7 +40,7 @@ public class HomeAdapter extends ArrayAdapter<Product> {
                 tvPrice = view.findViewById(R.id.tv_price);
         ImageButton ibAdd2Cart = view.findViewById(R.id.ib_add2cart);
 
-        Product item = getItem(position);
+        Fruit item = getItem(position);
 
         if (item != null) {
             tvName.setText(item.name);

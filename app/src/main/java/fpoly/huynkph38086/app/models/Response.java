@@ -5,6 +5,9 @@ public class Response<T> {
     public String mess;
     public T data;
 
+    public Response() {
+    }
+
     public Response(int status, String mess, T data) {
         this.status = status;
         this.mess = mess;

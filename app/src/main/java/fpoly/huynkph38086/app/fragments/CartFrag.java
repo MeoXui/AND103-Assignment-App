@@ -1,16 +1,31 @@
 package fpoly.huynkph38086.app.fragments;
 
 import android.os.Bundle;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class History extends ListFrag {
+import java.util.ArrayList;
+import java.util.List;
+
+import fpoly.huynkph38086.app.models.Fruit;
+
+public class CartFrag extends ListFrag {
+    List<Fruit> list;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = super.onCreateView(inflater, container, savedInstanceState);
+
+        ibRefresh.setVisibility(View.GONE);
+        fab.setVisibility(View.GONE);
+
+        list = new ArrayList<>();
+        list.add(new Fruit("_id", "Sản phẩm mẫu", 200, 100, "", 1, "", ""));
+
         return view;
     }
 }

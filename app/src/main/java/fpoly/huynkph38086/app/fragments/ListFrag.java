@@ -11,23 +11,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
-
 import fpoly.huynkph38086.app.R;
-import fpoly.huynkph38086.app.models.Product;
-import fpoly.huynkph38086.app.models.Response;
-import fpoly.huynkph38086.app.services.APIServices;
 import fpoly.huynkph38086.app.services.HttpRequest;
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ListFrag extends Fragment {
     EditText edSearch;
     ImageButton ibRefresh;
+    TextView tvTitle;
     ListView lv;
     FloatingActionButton fab;
     Button btnPay;
@@ -42,6 +36,7 @@ public class ListFrag extends Fragment {
 
         edSearch = view.findViewById(R.id.ed_search);
         ibRefresh = view.findViewById(R.id.ib_re);
+        tvTitle = view.findViewById(R.id.tv_title);
         lv = view.findViewById(R.id.lv);
         fab = view.findViewById(R.id.fab);
         btnPay = view.findViewById(R.id.btn_pay);

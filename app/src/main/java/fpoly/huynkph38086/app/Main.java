@@ -15,10 +15,10 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import fpoly.huynkph38086.app.fragments.Cart;
-import fpoly.huynkph38086.app.fragments.ListFrag;
-import fpoly.huynkph38086.app.fragments.Home;
-import fpoly.huynkph38086.app.fragments.Info;
+import fpoly.huynkph38086.app.fragments.CartFrag;
+import fpoly.huynkph38086.app.fragments.DistributorFrag;
+import fpoly.huynkph38086.app.fragments.HomeFrag;
+import fpoly.huynkph38086.app.fragments.InfoFrag;
 
 public class Main extends AppCompatActivity {
     DrawerLayout drawer;
@@ -40,19 +40,19 @@ public class Main extends AppCompatActivity {
         nav = findViewById(R.id.nav);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fr, new Home()).commit();
+        manager.beginTransaction().replace(R.id.fr, new DistributorFrag()).commit();
 
         nav.setOnItemSelectedListener(item -> {
             Fragment frag = new Fragment();
 
             if (item.getItemId() == R.id.nav_Home)
-                frag = new Home();
+                frag = new HomeFrag();
 
             else if (item.getItemId() == R.id.nav_Cart)
-                frag = new Cart();
+                frag = new CartFrag();
 
             else if (item.getItemId() == R.id.nav_Info)
-                frag = new Info();
+                frag = new InfoFrag();
 
             else drawer.openDrawer(GravityCompat.START);
 
