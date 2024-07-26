@@ -30,7 +30,6 @@ public class HomeFrag extends ListFrag {
         btnPay.setVisibility(View.GONE);
 
         list = new ArrayList<>();
-        list.add(new Fruit("_id", "Sản phẩm mẫu", 200, 100, "", 1, "", ""));
 
         refresh();
 

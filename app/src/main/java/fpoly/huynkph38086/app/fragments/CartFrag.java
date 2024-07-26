@@ -24,7 +24,6 @@ public class CartFrag extends ListFrag {
         fab.setVisibility(View.GONE);
 
         list = new ArrayList<>();
-        list.add(new Fruit("_id", "Sản phẩm mẫu", 200, 100, "", 1, "", ""));
 
         return view;
     }

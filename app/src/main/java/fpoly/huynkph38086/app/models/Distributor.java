@@ -1,11 +1,13 @@
 package fpoly.huynkph38086.app.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Distributor {
+    @SerializedName("_id")
     public String _id;
     public String name;
     public String createdAt;
     public String updatedAt;
-    public int __v;
 
     public Distributor() {
     }

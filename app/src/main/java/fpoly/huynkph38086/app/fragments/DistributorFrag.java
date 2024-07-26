@@ -50,7 +50,6 @@ public class DistributorFrag extends ListFrag {
     void refresh() {
         request.api.getDistributors().enqueue(callback);
         edSearch.setText("");
-        Toast.makeText(getActivity(), "Size: " + list.size(), Toast.LENGTH_SHORT).show();
     }
 
     void openDialog() {
