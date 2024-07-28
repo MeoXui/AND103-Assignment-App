@@ -1,6 +1,9 @@
 package fpoly.huynkph38086.app.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class User {
+    @SerializedName("_id")
     public String _id;
     public String username;
     public String password;
@@ -12,6 +15,11 @@ public class User {
     public String updatedAt;
 
     public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public User(String _id, String username, String password, String email, String name, String avatar, boolean available, String createdAt, String updatedAt) {

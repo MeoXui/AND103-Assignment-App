@@ -40,7 +40,7 @@ public class Main extends AppCompatActivity {
         nav = findViewById(R.id.nav);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fr, new DistributorFrag()).commit();
+        manager.beginTransaction().replace(R.id.fr, new HomeFrag()).commit();
 
         nav.setOnItemSelectedListener(item -> {
             Fragment frag = new Fragment();

@@ -17,8 +17,10 @@ public class InfoFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_info, container, false);
 
-        view.findViewById(R.id.btn_out).setOnClickListener(v -> {
-            getActivity().finish();
+        view.findViewById(R.id.btn_out).setOnClickListener(v -> getActivity().finish());
+
+        view.findViewById(R.id.tv_distributors).setOnClickListener(v -> {
+            getParentFragmentManager().beginTransaction().replace(R.id.fr, new DistributorFrag()).commit();
         });
 
         return view;

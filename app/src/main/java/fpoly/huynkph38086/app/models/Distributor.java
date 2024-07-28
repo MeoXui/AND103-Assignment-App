@@ -12,6 +12,10 @@ public class Distributor {
     public Distributor() {
     }
 
+    public Distributor(String name) {
+        this.name = name;
+    }
+
     public Distributor(String _id, String name, String createdAt, String updatedAt) {
         this._id = _id;
         this.name = name;

@@ -83,8 +83,7 @@ public class DistributorFrag extends ListFrag<Distributor> {
         btnCancel.setOnClickListener(v -> dialog.dismiss());
         btnSave.setOnClickListener(v -> {
             String name = edName.getText().toString();
-            Distributor anew = new Distributor();
-            anew.name = name;
+            Distributor anew = new Distributor(name);
             if (old == null) request.api.addDistributors(anew).enqueue(callback);
             else request.api.updateDistributors(old._id, anew).enqueue(callback);
             dialog.dismiss();

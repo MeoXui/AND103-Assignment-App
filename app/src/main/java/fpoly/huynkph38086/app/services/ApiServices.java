@@ -6,12 +6,16 @@ import fpoly.huynkph38086.app.models.Distributor;
 import fpoly.huynkph38086.app.models.Fruit;
 import fpoly.huynkph38086.app.models.Response;
 import fpoly.huynkph38086.app.models.User;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -36,8 +40,16 @@ public interface ApiServices {
     Call<Response<ArrayList<Fruit>>> searchFruits(@Query("key") String key);
 
     //POST
-    //@POST("register")
-    //@POST("login")
+    @Multipart
+    @POST("register")
+    Call<Response<User>> register(@Part("username") RequestBody username,
+                                  @Part("password") RequestBody password,
+                                  @Part("email") RequestBody email,
+                                  @Part("name") RequestBody name,
+                                  @Part MultipartBody.Part avatar);
+
+    @POST("login")
+    Call<Response<User>> login(@Body User user);
 
     @POST("add_distributor")
     Call<Response<Distributor>> addDistributors(@Body Distributor distributor);
