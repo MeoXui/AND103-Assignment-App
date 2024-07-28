@@ -22,6 +22,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import org.jetbrains.annotations.Contract;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -68,7 +70,17 @@ public class Register extends AppCompatActivity {
 
         ivAVT.setOnClickListener(v -> chooseImage());
 
-        btnUP.setOnClickListener(v -> {
+        btnUP.setOnClickListener(v -> register());
+        btnIN.setOnClickListener(v -> finish());
+    }
+
+    private boolean validate() {
+        return !(edUN.getText().toString().isEmpty() || edPW.getText().toString().isEmpty());
+    }
+
+    private void register() {
+        if (validate()) {
+
             RequestBody _username = getRB(edUN);
             RequestBody _password = getRB(edPW);
             RequestBody _email = getRB(edEmail);
@@ -81,12 +93,16 @@ public class Register extends AppCompatActivity {
             } else part = null;
 
             request.api.register(_username, _password, _email, _name, part).enqueue(callback);
-        });
-        btnIN.setOnClickListener(v -> finish());
+            return;
+        }
+        Toast.makeText(this, "Vui nhập tên tài khoản và mật khẩu", Toast.LENGTH_SHORT).show();
     }
 
-    private RequestBody getRB(EditText ed) {
-        return RequestBody.create(MediaType.get("multipart/form-data"), ed.getText().toString());
+    @NonNull
+    @Contract("_ -> new")
+    private RequestBody getRB(@NonNull EditText ed) {
+        String content = ed.getText().toString().isEmpty() ? "" : ed.getText().toString();
+        return RequestBody.create(MediaType.get("multipart/form-data"), content);
     }
 
     private void chooseImage() {

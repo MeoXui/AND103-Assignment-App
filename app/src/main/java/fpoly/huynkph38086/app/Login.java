@@ -55,9 +55,17 @@ public class Login extends AppCompatActivity {
         btnUP.setOnClickListener(v -> startActivity(Register.class));
     }
 
+    private boolean validate() {
+        return !(edUN.getText().toString().isEmpty() || edPW.getText().toString().isEmpty());
+    }
+
     private void login() {
-        User user = new User(edUN.getText().toString(), edPW.getText().toString());
-        request.api.login(user).enqueue(callback);
+        if (validate()) {
+            User user = new User(edUN.getText().toString(), edPW.getText().toString());
+            request.api.login(user).enqueue(callback);
+            return;
+        }
+        Toast.makeText(this, "Vui lòng nhập đầy đủ!", Toast.LENGTH_SHORT).show();
     }
 
     void startActivity(Class<?> activity) {
@@ -76,9 +84,9 @@ public class Login extends AppCompatActivity {
                     editor.putString("refreshToken", response.body().refreshToken);
                     editor.putString("id", response.body().data._id);
                     editor.apply();
-                    Toast.makeText(Login.this, response.body().mess, Toast.LENGTH_SHORT).show();
                     startActivity(Main.class);
                 }
+                Toast.makeText(Login.this, response.body().mess, Toast.LENGTH_SHORT).show();
             }
         }
 
