@@ -1,5 +1,8 @@
 package fpoly.huynkph38086.app.fragments;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,9 +19,10 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import fpoly.huynkph38086.app.R;
+import fpoly.huynkph38086.app.adapters.ItemHandle;
 import fpoly.huynkph38086.app.services.HttpRequest;
 
-public class ListFrag extends Fragment {
+public class ListFrag<T> extends Fragment {
     EditText edSearch;
     ImageButton ibRefresh;
     TextView tvTitle;
@@ -26,7 +30,10 @@ public class ListFrag extends Fragment {
     FloatingActionButton fab;
     Button btnPay;
 
+    Dialog dialog;
+    Context context;
     HttpRequest request;
+    ItemHandle<T> handle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +48,7 @@ public class ListFrag extends Fragment {
         fab = view.findViewById(R.id.fab);
         btnPay = view.findViewById(R.id.btn_pay);
 
+        context = getActivity();
         request = new HttpRequest();
 
         return view;

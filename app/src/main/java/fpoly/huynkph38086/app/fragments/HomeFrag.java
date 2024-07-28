@@ -18,7 +18,7 @@ import fpoly.huynkph38086.app.models.Response;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class HomeFrag extends ListFrag {
+public class HomeFrag extends ListFrag<Fruit> {
     List<Fruit> list;
     HomeAdapter adapter;
 
@@ -40,7 +40,7 @@ public class HomeFrag extends ListFrag {
 
     void refresh() {
         request.api.getFruits().enqueue(callback);
-        adapter = new HomeAdapter(getActivity(), list);
+        adapter = new HomeAdapter(context, list);
         lv.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
@@ -58,7 +58,7 @@ public class HomeFrag extends ListFrag {
         }
 
         @Override
-        public void onFailure(Call<Response<ArrayList<Fruit>>> call, Throwable t) {
+        public void onFailure(@NonNull Call<Response<ArrayList<Fruit>>> call, Throwable t) {
             Log.e("Get Data: ", t.getMessage());
         }
     };

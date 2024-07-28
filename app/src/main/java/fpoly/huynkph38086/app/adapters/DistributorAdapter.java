@@ -1,5 +1,6 @@
 package fpoly.huynkph38086.app.adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +20,13 @@ import fpoly.huynkph38086.app.models.Distributor;
 public class DistributorAdapter extends ArrayAdapter<Distributor> {
     Context mContext;
     int itemLayout;
+    ItemHandle<Distributor> mHandle;
 
-    public DistributorAdapter(@NonNull Context context, @NonNull List<Distributor> list) {
+    public DistributorAdapter(@NonNull Context context, @NonNull List<Distributor> list, @NonNull ItemHandle<Distributor> handle) {
         super(context, R.layout.item_distributor, list);
         mContext = context;
         itemLayout = R.layout.item_distributor;
+        mHandle = handle;
     }
 
     @NonNull
@@ -38,7 +41,11 @@ public class DistributorAdapter extends ArrayAdapter<Distributor> {
 
         Distributor item = getItem(position);
 
-        if (item != null) tvName.setText(item.name);
+        if (item != null) {
+            tvName.setText(item.name);
+            ibEdt.setOnClickListener(v -> mHandle.update(item));
+            ibDlt.setOnClickListener(v -> mHandle.delete(item._id));
+        }
 
         return view;
     }
