@@ -47,6 +47,6 @@ public interface ApiServices {
     Call<Response<Distributor>> updateDistributors(@Path("id") String id, @Body Distributor distributor);
 
     //DELETE
-    @DELETE("delete_distributor_id")
+    @DELETE("delete_distributor_id{id}")
     Call<Response<Distributor>> deleteDistributors(@Path("id") String id);
 }

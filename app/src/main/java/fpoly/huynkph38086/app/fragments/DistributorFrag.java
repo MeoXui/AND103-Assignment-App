@@ -115,7 +115,7 @@ public class DistributorFrag extends ListFrag<Distributor> {
             if (response.isSuccessful()) {
                 assert response.body() != null;
                 if (response.body().status == 200) refresh();
-                Toast.makeText(context, response.body().mess, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, response.body().mess, Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -136,7 +136,7 @@ public class DistributorFrag extends ListFrag<Distributor> {
                     lv.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 }
-                Toast.makeText(context, response.body().mess, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, response.body().mess, Toast.LENGTH_SHORT).show();
             }
         }
 
