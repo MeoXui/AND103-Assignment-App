@@ -78,4 +78,13 @@
         android:text="Đăng ký"
         android:textSize="18sp" />
 
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="#0f0"
+        android:text="Im Tester"
+        android:textSize="18sp" />
+
 </LinearLayout>

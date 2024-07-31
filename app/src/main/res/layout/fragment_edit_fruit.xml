@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.EditFruitFrag">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:minHeight="150dp"
+            android:src="@drawable/ic_broken_image_24x24_rgb888" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên sản phẩm"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_quan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Số lượng"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Giá bán"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái:"
+                android:textColor="#888"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/chk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Đang bán"
+                android:textColor="#888"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <CheckBox
+                android:id="@+id/chk0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bán hết"
+                android:textColor="#888"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/chk_1"
+                app:layout_constraintStart_toEndOf="@+id/chk1"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <CheckBox
+                android:id="@+id/chk_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngưng bắn"
+                android:textColor="#888"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:text="Nhà phân phối:"
+                android:textColor="#888"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/sp"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="8dp"
+                android:background="#ddd"/>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mô tả"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="#0f0"
+            android:text="Lưu"
+            android:textSize="18sp" />
+    </LinearLayout>
+</FrameLayout>

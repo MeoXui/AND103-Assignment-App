@@ -13,19 +13,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import fpoly.huynkph38086.app.R;
+import fpoly.huynkph38086.app.models.Distributor;
 import fpoly.huynkph38086.app.models.Fruit;
 
 public class HomeAdapter extends ArrayAdapter<Fruit> {
     Context mContext;
     int itemLayout;
+    ItemHandle<Fruit> mHandle;
 
-    public HomeAdapter(@NonNull Context context, @NonNull List<Fruit> list) {
+    public HomeAdapter(@NonNull Context context, @NonNull List<Fruit> list, ItemHandle<Fruit> handle) {
         super(context, R.layout.item_fruit, list);
         mContext = context;
         itemLayout = R.layout.item_fruit;
+        mHandle = handle;
     }
 
     @SuppressLint("ResourceAsColor")
@@ -43,11 +48,27 @@ public class HomeAdapter extends ArrayAdapter<Fruit> {
         Fruit item = getItem(position);
 
         if (item != null) {
+            Glide.with(mContext)
+                    .load(item.images.get(0))
+                    .thumbnail(Glide.with(mContext).load(R.drawable.ic_broken_image_24x24_rgb888))
+                    .into(imgAvt);
             tvName.setText(item.name);
-            if (item.status == 1) tvName.setTextColor(R.color.green);
-            if (item.status == 0) tvName.setTextColor(R.color.red);
-            if (item.status == -1) tvName.setTextColor(R.color.light_gray);
+            switch (item.status) {
+                case 1:
+                    tvName.setTextColor(R.color.green);
+                    break;
+                case 0:
+                    tvName.setTextColor(R.color.red);
+                    break;
+                case -1:
+                    tvName.setTextColor(R.color.light_gray);
+                    break;
+                default:
+                    tvName.setTextColor(R.color.black);
+                    break;
+            }
             tvPrice.setText(String.valueOf(item.price));
+            ibAdd2Cart.setOnClickListener(v -> {});
         }
 
         return view;

@@ -53,6 +53,10 @@ public class Login extends AppCompatActivity {
 
         btnIN.setOnClickListener(v -> login());
         btnUP.setOnClickListener(v -> startActivity(Register.class));
+        findViewById(R.id.btn_test).setOnClickListener(v -> {
+            Toast.makeText(this, "Chế dộ kiểm thử", Toast.LENGTH_SHORT).show();
+            startActivity(Main.class);
+        });
     }
 
     private boolean validate() {

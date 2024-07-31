@@ -22,7 +22,7 @@ public class DistributorAdapter extends ArrayAdapter<Distributor> {
     int itemLayout;
     ItemHandle<Distributor> mHandle;
 
-    public DistributorAdapter(@NonNull Context context, @NonNull List<Distributor> list, @NonNull ItemHandle<Distributor> handle) {
+    public DistributorAdapter(@NonNull Context context, @NonNull List<Distributor> list, ItemHandle<Distributor> handle) {
         super(context, R.layout.item_distributor, list);
         mContext = context;
         itemLayout = R.layout.item_distributor;

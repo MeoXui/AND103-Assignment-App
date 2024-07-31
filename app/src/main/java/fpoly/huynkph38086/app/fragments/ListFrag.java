@@ -1,5 +1,6 @@
 package fpoly.huynkph38086.app.fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -31,6 +32,7 @@ public class ListFrag<T> extends Fragment {
     Button btnPay;
 
     Dialog dialog;
+    Activity activity;
     Context context;
     HttpRequest request;
     ItemHandle<T> handle;
@@ -48,7 +50,8 @@ public class ListFrag<T> extends Fragment {
         fab = view.findViewById(R.id.fab);
         btnPay = view.findViewById(R.id.btn_pay);
 
-        context = getActivity();
+        activity = getActivity();
+        context = activity;
         request = new HttpRequest();
 
         return view;
