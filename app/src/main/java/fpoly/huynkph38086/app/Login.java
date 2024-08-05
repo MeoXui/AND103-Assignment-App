@@ -1,6 +1,5 @@
 package fpoly.huynkph38086.app;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,7 +16,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import fpoly.huynkph38086.app.models.Response;
+import fpoly.huynkph38086.app.services.Response;
 import fpoly.huynkph38086.app.models.User;
 import fpoly.huynkph38086.app.services.HttpRequest;
 import retrofit2.Call;

@@ -1,4 +1,4 @@
-package fpoly.huynkph38086.app.models;
+package fpoly.huynkph38086.app.services;
 
 public class Response<T> {
     public int status;

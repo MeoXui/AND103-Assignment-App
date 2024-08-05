@@ -9,7 +9,7 @@ public class Fruit {
     public String _id;
     public String name;
     public int quantity;
-    public int price;
+    public double price;
     public int status;
     public ArrayList<String> images;
     public String des;
@@ -21,7 +21,7 @@ public class Fruit {
     public Fruit() {
     }
 
-    public Fruit(String name, int quantity, int price, int status, ArrayList<String> images, String des, Distributor distributor) {
+    public Fruit(String name, int quantity, double price, int status, ArrayList<String> images, String des, Distributor distributor) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -31,7 +31,7 @@ public class Fruit {
         this.distributor = distributor;
     }
 
-    public Fruit(String _id, String name, int quantity, int price, int status, ArrayList<String> images, String des, Distributor distributor, String createdAt, String updatedAt) {
+    public Fruit(String _id, String name, int quantity, double price, int status, ArrayList<String> images, String des, Distributor distributor, String createdAt, String updatedAt) {
         this._id = _id;
         this.name = name;
         this.quantity = quantity;

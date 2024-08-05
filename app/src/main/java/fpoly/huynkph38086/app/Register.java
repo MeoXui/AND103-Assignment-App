@@ -30,7 +30,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 
-import fpoly.huynkph38086.app.models.Response;
+import fpoly.huynkph38086.app.services.Response;
 import fpoly.huynkph38086.app.models.User;
 import fpoly.huynkph38086.app.services.HttpRequest;
 import okhttp3.MediaType;

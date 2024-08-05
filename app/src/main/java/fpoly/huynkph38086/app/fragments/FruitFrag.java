@@ -19,13 +19,12 @@ import java.util.List;
 import fpoly.huynkph38086.app.R;
 import fpoly.huynkph38086.app.adapters.HomeAdapter;
 import fpoly.huynkph38086.app.adapters.ItemHandle;
-import fpoly.huynkph38086.app.models.Distributor;
 import fpoly.huynkph38086.app.models.Fruit;
-import fpoly.huynkph38086.app.models.Response;
+import fpoly.huynkph38086.app.services.Response;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class HomeFrag extends ListFrag<Fruit> {
+public class FruitFrag extends ListFrag<Fruit> {
     List<Fruit> list;
     HomeAdapter adapter;
 

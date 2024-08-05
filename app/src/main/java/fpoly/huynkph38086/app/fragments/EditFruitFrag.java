@@ -42,7 +42,7 @@ import fpoly.huynkph38086.app.R;
 import fpoly.huynkph38086.app.adapters.DistributorSpinner;
 import fpoly.huynkph38086.app.models.Distributor;
 import fpoly.huynkph38086.app.models.Fruit;
-import fpoly.huynkph38086.app.models.Response;
+import fpoly.huynkph38086.app.services.Response;
 import fpoly.huynkph38086.app.services.HttpRequest;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;

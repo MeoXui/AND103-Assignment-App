@@ -5,7 +5,6 @@ import java.util.Map;
 
 import fpoly.huynkph38086.app.models.Distributor;
 import fpoly.huynkph38086.app.models.Fruit;
-import fpoly.huynkph38086.app.models.Response;
 import fpoly.huynkph38086.app.models.User;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -23,7 +22,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiServices {
-    static String BASE_URL = "http://10.24.39.155:3000/api/";
+    static String BASE_URL = "http://192.168.2.11:3000/api/";
 
     //GET
     @GET("users")

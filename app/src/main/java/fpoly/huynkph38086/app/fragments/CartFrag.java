@@ -19,7 +19,7 @@ public class CartFrag extends ListFrag {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = super.onCreateView(inflater, container, savedInstanceState);
-
+        tvTitle.setText("Giỏ hàng");
         ibRefresh.setVisibility(View.GONE);
         fab.setVisibility(View.GONE);
 

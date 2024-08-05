@@ -16,8 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import fpoly.huynkph38086.app.fragments.CartFrag;
-import fpoly.huynkph38086.app.fragments.DistributorFrag;
-import fpoly.huynkph38086.app.fragments.HomeFrag;
+import fpoly.huynkph38086.app.fragments.FruitFrag;
 import fpoly.huynkph38086.app.fragments.InfoFrag;
 
 public class Main extends AppCompatActivity {
@@ -40,13 +39,13 @@ public class Main extends AppCompatActivity {
         nav = findViewById(R.id.nav);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.fr, new HomeFrag()).commit();
+        manager.beginTransaction().replace(R.id.fr, new FruitFrag()).commit();
 
         nav.setOnItemSelectedListener(item -> {
             Fragment frag = new Fragment();
 
             if (item.getItemId() == R.id.nav_Home)
-                frag = new HomeFrag();
+                frag = new FruitFrag();
 
             else if (item.getItemId() == R.id.nav_Cart)
                 frag = new CartFrag();

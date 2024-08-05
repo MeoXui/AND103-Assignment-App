@@ -21,7 +21,7 @@ import fpoly.huynkph38086.app.R;
 import fpoly.huynkph38086.app.adapters.DistributorAdapter;
 import fpoly.huynkph38086.app.adapters.ItemHandle;
 import fpoly.huynkph38086.app.models.Distributor;
-import fpoly.huynkph38086.app.models.Response;
+import fpoly.huynkph38086.app.services.Response;
 import retrofit2.Call;
 import retrofit2.Callback;
 
