@@ -1,6 +1,7 @@
 package fpoly.huynkph38086.app.services;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import fpoly.huynkph38086.app.models.Distributor;
 import fpoly.huynkph38086.app.models.Fruit;
@@ -17,11 +18,12 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.PartMap;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiServices {
-    static String BASE_URL = "http://10.24.54.36:3000/api/";
+    static String BASE_URL = "http://10.24.39.155:3000/api/";
 
     //GET
     @GET("users")
@@ -43,17 +45,24 @@ public interface ApiServices {
     //POST
     @Multipart
     @POST("register")
-    Call<Response<User>> register(@Part("username") RequestBody username,
-                                  @Part("password") RequestBody password,
-                                  @Part("email") RequestBody email,
-                                  @Part("name") RequestBody name,
-                                  @Part MultipartBody.Part avatar);
+    Call<Response<User>> register(
+            @Part("username") RequestBody username,
+            @Part("password") RequestBody password,
+            @Part("email") RequestBody email,
+            @Part("name") RequestBody name,
+            @Part MultipartBody.Part avatar);
 
     @POST("login")
     Call<Response<User>> login(@Body User user);
 
     @POST("add_distributor")
-    Call<Response<Distributor>> addDistributors(@Body Distributor distributor);
+    Call<Response<Distributor>> addDistributor(@Body Distributor distributor);
+
+    @Multipart
+    @POST("add_fruit")
+    Call<Response<Fruit>> addFruit(
+            @PartMap Map<String, RequestBody> requestBodyMap,
+            @Part ArrayList<MultipartBody.Part> images);
 
     //PUT
     @PUT("update_distributor_id{id}")

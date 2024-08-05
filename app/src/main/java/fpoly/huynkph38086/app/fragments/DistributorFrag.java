@@ -87,7 +87,7 @@ public class DistributorFrag extends ListFrag<Distributor> {
             else {
                 String name = edName.getText().toString();
                 Distributor anew = new Distributor(name);
-                if (old == null) request.api.addDistributors(anew).enqueue(callback);
+                if (old == null) request.api.addDistributor(anew).enqueue(callback);
                 else request.api.updateDistributors(old._id, anew).enqueue(callback);
                 dialog.dismiss();
             }

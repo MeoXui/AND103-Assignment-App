@@ -44,6 +44,9 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
+    implementation(libs.okhttp)
+    implementation(libs.converter.scalars)
+
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
 }

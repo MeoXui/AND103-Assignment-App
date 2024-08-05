@@ -31,9 +31,9 @@ public class ListFrag<T> extends Fragment {
     FloatingActionButton fab;
     Button btnPay;
 
-    Dialog dialog;
     Activity activity;
     Context context;
+    Dialog dialog;
     HttpRequest request;
     ItemHandle<T> handle;
 

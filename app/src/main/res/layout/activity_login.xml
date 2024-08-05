@@ -85,6 +85,7 @@
         android:layout_margin="8dp"
         android:backgroundTint="#0f0"
         android:text="Im Tester"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone" />
 
 </LinearLayout>

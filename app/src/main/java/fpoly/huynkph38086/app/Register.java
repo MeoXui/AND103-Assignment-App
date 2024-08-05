@@ -41,8 +41,8 @@ import retrofit2.Callback;
 
 public class Register extends AppCompatActivity {
     EditText edUN, edPW, edEmail, edName;
-    ImageView ivAVT;
-    Button btnIN, btnUP;
+    ImageView ivAvt;
+    Button btnIn, btnUp;
 
     HttpRequest request;
     File file;
@@ -62,16 +62,16 @@ public class Register extends AppCompatActivity {
         edPW = findViewById(R.id.ed_pw);
         edEmail = findViewById(R.id.ed_email);
         edName = findViewById(R.id.ed_name);
-        ivAVT = findViewById(R.id.iv_avt);
-        btnUP = findViewById(R.id.btn_up);
-        btnIN = findViewById(R.id.btn_in);
+        ivAvt = findViewById(R.id.iv_avt);
+        btnUp = findViewById(R.id.btn_up);
+        btnIn = findViewById(R.id.btn_in);
 
         request = new HttpRequest();
 
-        ivAVT.setOnClickListener(v -> chooseImage());
+        ivAvt.setOnClickListener(v -> chooseImage());
 
-        btnUP.setOnClickListener(v -> register());
-        btnIN.setOnClickListener(v -> finish());
+        btnUp.setOnClickListener(v -> register());
+        btnIn.setOnClickListener(v -> finish());
     }
 
     private boolean validate() {
@@ -123,7 +123,7 @@ public class Register extends AppCompatActivity {
                     .centerCrop().centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .skipMemoryCache(true)
-                    .into(ivAVT);
+                    .into(ivAvt);
         }
     });
 
@@ -135,11 +135,8 @@ public class Register extends AppCompatActivity {
             OutputStream out = Files.newOutputStream(_file.toPath());
             byte[] buf = new byte[1024];
             int len;
-            while (true) {
-                assert in != null;
-                if (!((len=in.read(buf))>0)) break;
-                out.write(buf, 0, len);
-            }
+            assert in != null;
+            while ((len=in.read(buf))>0) out.write(buf, 0, len);
             out.close();
             in.close();
             return _file;
@@ -148,6 +145,8 @@ public class Register extends AppCompatActivity {
         }
         return null;
     }
+
+
 
     Callback<Response<User>> callback = new Callback<Response<User>>() {
         @Override

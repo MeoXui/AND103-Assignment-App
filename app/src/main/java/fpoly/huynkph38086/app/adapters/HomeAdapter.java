@@ -40,7 +40,7 @@ public class HomeAdapter extends ArrayAdapter<Fruit> {
         if (view == null)
             view = LayoutInflater.from(mContext).inflate(itemLayout, null);
 
-        ImageView imgAvt = view.findViewById(R.id.iv_avt);
+        ImageView ivImg = view.findViewById(R.id.iv_img);
         TextView tvName = view.findViewById(R.id.tv_name),
                 tvPrice = view.findViewById(R.id.tv_price);
         ImageButton ibAdd2Cart = view.findViewById(R.id.ib_add2cart);
@@ -48,10 +48,11 @@ public class HomeAdapter extends ArrayAdapter<Fruit> {
         Fruit item = getItem(position);
 
         if (item != null) {
-            Glide.with(mContext)
-                    .load(item.images.get(0))
-                    .thumbnail(Glide.with(mContext).load(R.drawable.ic_broken_image_24x24_rgb888))
-                    .into(imgAvt);
+            if (!item.images.isEmpty())
+                Glide.with(mContext)
+                        .load(item.images.get(0))
+                        .thumbnail(Glide.with(mContext).load(R.drawable.ic_broken_image_24x24_rgb888))
+                        .into(ivImg);
             tvName.setText(item.name);
             switch (item.status) {
                 case 1:
