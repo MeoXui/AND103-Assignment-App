@@ -24,7 +24,7 @@ import fpoly.huynkph38086.app.services.Response;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class FruitFrag extends ListFrag<Fruit> {
+public class HomeFrag extends ListFrag<Fruit> {
     List<Fruit> list;
     HomeAdapter adapter;
 
