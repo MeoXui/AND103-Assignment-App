@@ -1,4 +1,4 @@
-package fpoly.huynkph38086.app.adapters;
+package fpoly.huynkph38086.app.spinner;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -37,7 +37,8 @@ public class DistributorSpinner extends ArrayAdapter<Distributor> {
     }
 
     public View run(int position, @Nullable View view) {
-        view = LayoutInflater.from(mContext).inflate(itemLayout, null);
+        if (view == null)
+            view = LayoutInflater.from(mContext).inflate(itemLayout, null);
 
         TextView tvName = view.findViewById(R.id.tv_name);
         tvName.setTextSize(18);

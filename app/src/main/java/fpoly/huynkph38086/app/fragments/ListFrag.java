@@ -1,7 +1,6 @@
 package fpoly.huynkph38086.app.fragments;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -20,7 +19,7 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import fpoly.huynkph38086.app.R;
-import fpoly.huynkph38086.app.adapters.ItemHandle;
+import fpoly.huynkph38086.app.hamdle.ItemHandle;
 import fpoly.huynkph38086.app.services.HttpRequest;
 
 public class ListFrag<T> extends Fragment {
@@ -43,16 +42,16 @@ public class ListFrag<T> extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
+        activity = getActivity();
+        context = activity;
+        request = new HttpRequest();
+
         edSearch = view.findViewById(R.id.ed_search);
         ibRefresh = view.findViewById(R.id.ib_re);
         tvTitle = view.findViewById(R.id.tv_title);
         lv = view.findViewById(R.id.lv);
         fab = view.findViewById(R.id.fab);
         btnPay = view.findViewById(R.id.btn_pay);
-
-        activity = getActivity();
-        context = activity;
-        request = new HttpRequest();
 
         return view;
     }

@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 
 import fpoly.huynkph38086.app.R;
-import fpoly.huynkph38086.app.adapters.DistributorSpinner;
+import fpoly.huynkph38086.app.spinner.DistributorSpinner;
 import fpoly.huynkph38086.app.models.Distributor;
 import fpoly.huynkph38086.app.models.Fruit;
 import fpoly.huynkph38086.app.services.Response;
@@ -54,7 +54,7 @@ public class EditFruitFrag extends Fragment {
     EditText edName, edQuantity, edPrice, edDes;
     ImageView ivImg;
     CheckBox chk1, chk0, chk_1;
-    Spinner spn;
+    Spinner sp;
     Button btnSeve;
 
     Activity activity;
@@ -83,7 +83,7 @@ public class EditFruitFrag extends Fragment {
         chk0 = view.findViewById(R.id.chk0);
         chk_1 = view.findViewById(R.id.chk_1);
         group();
-        spn = view.findViewById(R.id.spn);
+        sp = view.findViewById(R.id.sp);
         edDes = view.findViewById(R.id.ed_des);
         btnSeve = view.findViewById(R.id.btn_save);
 
@@ -99,7 +99,7 @@ public class EditFruitFrag extends Fragment {
 
         ivImg.setOnClickListener(v -> chooseImage());
 
-        spn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 distributor = spinner.getItem(position);
@@ -112,7 +112,7 @@ public class EditFruitFrag extends Fragment {
 
             }
         });
-        spn.setSelection(0);
+        sp.setSelection(0);
 
         btnSeve.setOnClickListener(v -> addFruit());
 
@@ -270,7 +270,7 @@ public class EditFruitFrag extends Fragment {
                 if (response.body().status == 200) {
                     listDistributors = response.body().data;
                     spinner = new DistributorSpinner(context, listDistributors);
-                    spn.setAdapter(spinner);
+                    sp.setAdapter(spinner);
                 }
                 //Toast.makeText(context, response.body().mess, Toast.LENGTH_SHORT).show();
             }

@@ -86,6 +86,6 @@
         android:backgroundTint="#0f0"
         android:text="Im Tester"
         android:textSize="18sp"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 </LinearLayout>

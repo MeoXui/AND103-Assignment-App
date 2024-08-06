@@ -17,8 +17,8 @@ public interface GHNServices {
     @GET("province")
     Call<ResponseGHN<ArrayList<Province>>> getProvinces();
 
-    @POST("district")
-    Call<ResponseGHN<ArrayList<District>>> getDistricts(@Body Province province);
+    @GET("district")
+    Call<ResponseGHN<ArrayList<District>>> getDistricts(@Query("province_id") int province_id);
 
     @GET("ward")
     Call<ResponseGHN<ArrayList<Ward>>> getWards(@Query("district_id") int district_id);

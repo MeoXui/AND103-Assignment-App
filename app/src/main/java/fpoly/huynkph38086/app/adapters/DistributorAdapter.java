@@ -1,6 +1,5 @@
 package fpoly.huynkph38086.app.adapters;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import fpoly.huynkph38086.app.R;
+import fpoly.huynkph38086.app.hamdle.ItemHandle;
 import fpoly.huynkph38086.app.models.Distributor;
 
 public class DistributorAdapter extends ArrayAdapter<Distributor> {

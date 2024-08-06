@@ -4,4 +4,8 @@ public class District {
     public int DistrictID;
     public int ProvinceID;
     public String DistrictName;
+
+    public String name() {
+        return DistrictName;
+    }
 }

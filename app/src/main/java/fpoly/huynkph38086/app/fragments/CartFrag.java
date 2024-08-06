@@ -16,7 +16,7 @@ import java.util.List;
 
 import fpoly.huynkph38086.app.R;
 import fpoly.huynkph38086.app.adapters.CartAdapter;
-import fpoly.huynkph38086.app.adapters.ItemHandle;
+import fpoly.huynkph38086.app.hamdle.ItemHandle;
 import fpoly.huynkph38086.app.models.Fruit;
 
 public class CartFrag extends ListFrag<Fruit> {

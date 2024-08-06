@@ -18,7 +18,7 @@ import java.util.List;
 
 import fpoly.huynkph38086.app.R;
 import fpoly.huynkph38086.app.adapters.HomeAdapter;
-import fpoly.huynkph38086.app.adapters.ItemHandle;
+import fpoly.huynkph38086.app.hamdle.ItemHandle;
 import fpoly.huynkph38086.app.models.Fruit;
 import fpoly.huynkph38086.app.services.Response;
 import retrofit2.Call;

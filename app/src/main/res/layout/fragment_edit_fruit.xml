@@ -138,7 +138,7 @@
                 android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/spn"
+                android:id="@+id/sp"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
